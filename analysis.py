@@ -71,7 +71,7 @@ def build_session_summary(dataset_path: Path) -> tuple[pd.DataFrame, dict]:
     for measure in MEASURES:
         non_hint = sessions.loc[~sessions["has_hint"], measure]
         hint = sessions.loc[sessions["has_hint"], measure]
-        result = mannwhitneyu(non_hint, hint, alternative="two-sided")
+        result = mannwhitneyu(hint, non_hint, alternative="two-sided")
         tests[measure] = {
             "u_statistic": float(result.statistic),
             "p_value": float(result.pvalue),
