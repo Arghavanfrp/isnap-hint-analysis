@@ -1,0 +1,15 @@
+# Raw and derived data
+dataset.txt
+data/
+outputs/
+*.csv
+*.tsv
+
+# Python temporary files
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local system files
+.DS_Store
